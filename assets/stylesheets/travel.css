@@ -2,35 +2,67 @@
 Choose a font from google fonts to use for the text in the hero
 and use @import to include in this style sheet. The font in the image is "Bangers"
 */
-
+@import url('https://fonts.googleapis.com/css?family=Bangers');
 
 /*
-- make the masthead a flexbox container
-- make sure the logo displays on the left and the navigation displays on the right using flexbox
-- make sure that the navigation can drop below the logo when the page shrinks using flexbox
-- make sure the content is vertically centered in the masthead using flexbox
-- using the position property, make sure the navigation stays fixed to the top when scrolling
-- when scrolling make sure there is no gap between the masthead and top of the page
+- make the masthead a flexbox container DONE
+- make sure the logo displays on the left and the navigation displays on the right using flexbox DONE
+- make sure that the navigation can drop below the logo when the page shrinks using flexbox DONE
+- make sure the content is vertically centered in the masthead using flexbox DONE
+- using the position property, make sure the navigation stays fixed to the top when scrolling DONE
+- when scrolling make sure there is no gap between the masthead and top of the page DONE
 */
+body {
+  margin: 0;
+}
+
+#masthead {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
 
 
 /*
-- make the hero div a flexbox container
-- make the items display stacked instead of as a row using flexbox
-- make sure the content is centered along the main axis using flexbox
-- make sure the content is vertically centered in the here div using flexbox
-- use the font brought in by google fonts for the text in the hero div
-- add a black dropshadow to the text with a 2px offset
+- make the hero div a flexbox container DONE
+- make the items display stacked instead of as a row using flexbox DONE
+- make sure the content is centered along the main axis using flexbox DONE
+- make sure the content is vertically centered in the here div using flexbox DONE
+- use the font brought in by google fonts for the text in the hero div DONE
+- add a black dropshadow to the text with a 2px offset DONE
 - adjust the top margin of the hero to account for the fixed masthead
 */
 
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Bangers;
+  text-shadow: 2px 2px black;
+}
+
+#hero {
+  margin-top: 100px;
+}
 
 /*
-- Make the cards div a flexbox container
+- Make the cards div a flexbox container DONE
 - make sure the content is centered along the main axis using flexbox
-- reverse the order of the cards using flexbox (should become chili aruna italy spain)
+- reverse the order of the cards using flexbox (should become chili aruna italy spain) DONE
 - make sure when the page shrinks the cards wrap and stack on eachother
 */
+
+#cards {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 
 /*
@@ -40,13 +72,23 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - make sure the information in the card is at the bottom of the card using flexbox
   (there is bottom padding applied in common.css to keep it off the very bottom so it looks right)
 */
-
+.card {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
 
 /*
 - Make the travel table div a flexbox container
 - using flexbox make sure the content is stacked and not in a row
 - make sure the content is centered in each card using flexbox
 */
+#travel-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 /*
@@ -54,14 +96,34 @@ and use @import to include in this style sheet. The font in the image is "Banger
 - make sure the copyright displays on the left and the social links display on the right using flexbox
 - make sure the content is vertically centered in the here div using flexbox
 */
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
 /*
 MEDIUM CHALLENGE:
-Using media queries, hide the national bird column in the table when the screen is at a 
+Using media queries, hide the national bird column in the table when the screen is at a
 max width of 800px. Hide both the national bird and population column when the
 screen is at a max width of 600px
 
 HINT:
-leverage the classes .bird and .population 
+leverage the classes .bird and .population
 */
+
+@media (max-width: 800px) {
+  .bird {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .bird {
+    display: none;
+  }
+  .population {
+    display: none;
+  }
+}
